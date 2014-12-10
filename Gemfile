@@ -1,6 +1,22 @@
 source 'https://rubygems.org'
 
 
+
+
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'bootstrap_form'
+
+gem 'simple_form'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+gem 'figaro'
+
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
