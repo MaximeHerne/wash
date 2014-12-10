@@ -1,1 +1,21 @@
-<h1>Bievenue chez toi </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h1>Profil de <%= @profile.last_name %> </h1>
+
+      <ul>
+        <li> Vous êtes <%= @profile.last_name %> <%= @profile.first_name %> </li>
+        <li> Votre téléphone est le <%= @profile.phone %> </li>
+        <li> Votre adresse est : <%= @profile.address %> </li>
+        <li> Votre ville est : <%= @profile.locality %> </li>
+        <li> Votre code postal est  : <%= @profile.postal_code %> </li>
+      </ul>
+
+        <%= link_to 'Editez votre profil', edit_profile_path(@profile), class: "btn btn-danger" %>
+        <%= link_to 'Faite votre machine', new_order_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+
+
