@@ -1,0 +1,9 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.input :formula %>
+  <%= f.input :temperature %>
+  <%= f.input :pickup_start_date %>
+  <%= f.input :pickup_end_date %>
+  <%= f.input :delivery_start_date %>
+  <%= f.input :delivery_end_date %>
+  <%= f.button :submit %>
+<% end %>
