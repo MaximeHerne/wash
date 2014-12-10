@@ -15,7 +15,6 @@ before_action :set_profile, only: [:edit, :update, :show]
   end
 
   def show
-
   end
 
   def edit
@@ -33,7 +32,7 @@ before_action :set_profile, only: [:edit, :update, :show]
   end
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :address, :phone, :locality, :postal_code)
+    params.require(:profile).permit(:first_name, :last_name, :phone, :address, :postal_code, :locality)
   end
 
 end
