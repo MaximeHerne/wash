@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :review , only: [:show, :edit, :update, :new, :create]
   end
   resources :profiles, only: [:show, :edit, :update, :new, :create]
+
 end
