@@ -23,7 +23,7 @@ before_action :set_profile, only: [:edit, :update, :show]
 
   def update
     @profile.update(profile_params)
-    redirect_to profile_path(current_user)
+    redirect_to profile_path(@profile)
   end
 
   private
