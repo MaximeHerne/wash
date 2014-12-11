@@ -7,6 +7,7 @@ before_action :set_profile, only: [:edit, :update, :show]
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
     else
