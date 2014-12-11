@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-before_action :set_profile, only: [:edit, :update, :show]
+  before_action :set_profile, only: [:edit, :update, :show]
+  before_action :check_ownership, only: [:edit, :update]
 
   def new
     @profile = Profile.new
@@ -27,6 +28,10 @@ before_action :set_profile, only: [:edit, :update, :show]
   end
 
   private
+
+  def check_ownership
+    redirect_to root_path unless Profile.find(params[:id]).user == current_user
+  end
 
   def set_profile
     @profile = Profile.find(params[:id])

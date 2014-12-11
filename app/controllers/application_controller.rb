@@ -5,7 +5,19 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    request.env['omniauth.origin'] || new_profile_path || root_path
+    if current_user.profile != nil
+      if current_user.profile.complete?
+        root_path
+      else
+        request.env['omniauth.origin'] || edit_profile_path(current_user.profile)
+      end
+    else
+      new_profile_path
+    end
+  end
+
+  def after_sign_up_path_for(resource)
+    new_profile_path
   end
 
 end
