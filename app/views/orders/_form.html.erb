@@ -1,6 +1,6 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :formula %>
-  <%= f.input :temperature %>
+  <%= f.input :formula, collection: ['Sans lessive', 'Avec lessive'], as: :radio_buttons %>
+  <%= f.input :temperature, collection: ['Froid', '30°', '40°', '50°', '60°'], as: :radio_buttons %>
   <%= f.input :pickup_start_date %>
   <%= f.input :pickup_end_date %>
   <%= f.input :delivery_start_date %>

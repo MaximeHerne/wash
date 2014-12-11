@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def new
