@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem "letter_opener", group: :development
 
 gem 'omniauth-facebook'
 
