@@ -1,17 +1,21 @@
 footer {
   background-color: #3498db;
-  color: white;
+  color: #fff;
   padding: 50px;
 
   a {
     i {
-      color: white;
+      color: #fff;
+      font-weight: 100;
       font-size: 2em;
       margin: 15px;
     }
     i:hover {
-      color: white;
+      color: #3498db;
+      text-decoration: none;
+    }
+    h3 {
+      font-weight: 700;
     }
   }
-
 }
