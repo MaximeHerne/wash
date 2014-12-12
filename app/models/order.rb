@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
   has_one :review
   has_one :formula
 
+  accepts_nested_attributes_for :formula, :review
+
   attr_accessor :start_time_range, :end_time_range
 
   def pickup_start_time
