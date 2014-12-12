@@ -3,7 +3,6 @@ before_action :set_profile
 
   def index
     @orders = current_user.orders
-    raise
   end
 
   def show
@@ -32,7 +31,7 @@ before_action :set_profile
 
     order_params_with_time[:delivery_start_date].gsub!("-","")
     @order.delivery_start_date = DateTime.parse("#{order_params_with_time[:delivery_start_date]}#{order_params_with_time[:delivery_start_time]}")
-    @order.save
+    @order.user = current_user
 
     if @order.save
       redirect_to order_path(@order)
