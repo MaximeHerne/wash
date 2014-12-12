@@ -1,9 +1,32 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :formula, collection: ['Sans lessive', 'Avec lessive'], as: :radio_buttons %>
-  <%= f.input :temperature, collection: ['Froid', '30°', '40°', '50°', '60°'], as: :radio_buttons %>
-  <%= f.input :pickup_start_date %>
-  <%= f.input :pickup_end_date %>
-  <%= f.input :delivery_start_date %>
-  <%= f.input :delivery_end_date %>
-  <%= f.button :submit %>
+  <div class="text-center">
+    <%= f.input :formula, collection: @formulas, as: :radio_buttons %>
+    <%= f.input :temperature, collection: @temperatures, as: :radio_buttons %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <%= f.input :pickup_start_date, as: :date, html5: true %>
+
+      <select name = "order[pickup_start_time]">
+        <% @time_brackets.each do  |time_bracket|%>
+          <option value = <%= time_bracket[1] %>><%= time_bracket[0]%></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="col-xs-6">
+      <%= f.input :delivery_start_date, as: :date, html5: true %>
+
+      <select name = "order[delivery_start_time]">
+        <% @time_brackets.each do  |time_bracket|%>
+          <option value = <%= time_bracket[1] %>><%= time_bracket[0]%></option>
+        <% end %>
+      </select>
+
+    </div>
+  </div>
+  <div class="text-center">
+    <%= f.button :submit %>
+  </div>
 <% end %>
