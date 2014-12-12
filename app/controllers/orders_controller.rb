@@ -3,6 +3,7 @@ before_action :set_profile
 
   def index
     @orders = current_user.orders
+    raise
   end
 
   def show

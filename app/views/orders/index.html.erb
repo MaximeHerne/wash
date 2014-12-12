@@ -1,5 +1,18 @@
-<h1>Les commandes de <%= @profile.first_name  %> sont </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-5">
 
-<% @orders.each do |order| %>
-  <%= order.id %>
-<% end %>
+<h3>Les commandes de <%= @profile.first_name %> sont </h3>
+
+
+<ul>
+  <% @orders.each do |order| %>
+    <li><%= order.id %></li>
+    <li><%= order.temperature %></li>
+  <% end %>
+</ul>
+
+
+    </div>
+  </div>
+</div>
