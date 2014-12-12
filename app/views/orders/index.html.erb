@@ -7,8 +7,10 @@
 
 <ul>
   <% @orders.each do |order| %>
-    <li><%= order.id %></li>
+    <li>Commande n°<%= order.id %></li>
     <li><%= order.temperature %></li>
+    <li><%= order.pickup_start_date %></li>
+    <li><%= order.delivery_start_date %></li>
   <% end %>
 </ul>
 
