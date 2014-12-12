@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @formulas = [["Sans lessive", "Sans lessive"], ["Avec lessive", "Avec lessive"]]
+    @formulas = Formula.all
     @time_brackets = [["19:00 - 19:30","190000"], ["19:30 - 20:00","193000"], ["20:00 - 20:30","200000"], ["20:30 - 21:00","203000"], ["21:30 - 22:00","213000"], ["22:00 - 22:30","220000"], ["22:30 - 23:00","223000"], ["23:00 - 23:30","230000"]]
     @temperatures = [["FROID","FROID"], ["30°","30°"], ["40°","40°"], ["50°","50°"], ["60°","60°"]]
   end

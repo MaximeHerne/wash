@@ -1,6 +1,6 @@
 <%= simple_form_for @order do |f| %>
   <div class="text-center">
-    <%= f.input :formula, collection: @formulas, as: :radio_buttons %>
+    <%= f.input :formula, as: :radio_buttons %>
     <%= f.input :temperature, collection: @temperatures, as: :radio_buttons %>
   </div>
 
