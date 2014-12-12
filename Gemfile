@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'activeadmin', github: 'activeadmin'
+gem "letter_opener", group: :development
+
 gem 'omniauth-facebook'
 
 gem 'bootstrap-sass', '~> 3.3.1'

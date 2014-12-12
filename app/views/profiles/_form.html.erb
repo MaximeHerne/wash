@@ -1,5 +1,7 @@
+
 <%= bootstrap_form_for(@profile) do |f| %>
   <%= f.text_field :first_name, autofocus: true %>
+
   <%= f.text_field :last_name, autocomplete: "off" %>
   <%= f.text_field :phone, autocomplete: "off" %>
   <%= f.text_field :address, autocomplete: "off" %>
