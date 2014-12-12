@@ -1,13 +1,18 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!
+before_action :set_profile
 
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def show
     @order = Order.find(params[:id])
     @profile = Profile.find(current_user.profile)
+    if @order.user == current_user
+      render :show
+    else
+      redirect_to root_path
+    end
   end
 
   def new
@@ -45,4 +50,7 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:temperature, :pickup_start_date, :pickup_start_time, :delivery_start_date, :delivery_start_time, :formula_attributes => [:id])
   end
 
+  def set_profile
+    @profile = Profile.find(current_user.profile)
+  end
 end
