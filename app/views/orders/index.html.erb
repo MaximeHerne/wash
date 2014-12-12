@@ -1,20 +1,21 @@
+
 <div class="container">
   <div class="row">
     <div class="col-xs-5">
+      <div class="orders">
 
-<h3>Les commandes de <%= @profile.first_name %> sont </h3>
-
-
+<h3 class="text-center">Commandes de <%= @profile.first_name %> sont </h3>
 <ul>
   <% @orders.each do |order| %>
     <li>Commande n°<%= order.id %></li>
-    <li><%= order.temperature %></li>
-    <li><%= order.pickup_start_date %></li>
-    <li><%= order.delivery_start_date %></li>
+    <li>Caractérisiques de la commande : <%= order.temperature %></li>
+    <li> Date de récupération du linge : <%= order.pickup_start_date %></li>
+    <li> Date de livraison du linge : <%= order.delivery_start_date %></li>
+    <br>
   <% end %>
 </ul>
 
-
+      </div>
     </div>
   </div>
 </div>
