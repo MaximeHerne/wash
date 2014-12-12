@@ -5,6 +5,7 @@ gem "letter_opener", group: :development
 
 # Heroku
 ruby '2.1.2'
+
 gem 'rails_12factor', group: :production
 
 gem 'omniauth-facebook'
