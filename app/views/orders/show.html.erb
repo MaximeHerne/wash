@@ -7,22 +7,45 @@
       <p><%= @profile.first_name %> <%= @profile.last_name %></p>
       <p>Votre téléphone : <%= @profile.phone %></p>
       <p>Votre adresse : <%= @profile.address %>, <%= @profile.postal_code %>, <%= @profile.locality %></p>
+      <h3>Votre récapitulatif commande</h3>
+      <p>Température : <%= @order.temperature %></p>
+      <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
+      </strong> à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
+
+      <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
+      <p>PRIX : <%= @order.formula.price %>€</p>
     </div>
-    <div class="col-xs-6">
-      <p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10500.764216557056!2d2.3542696776684813!3d48.854567091863665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1418296978110" width="600" height="300" frameborder="0" style="border:0"></iframe>
-      </p>
+    <div class="col-xs-6 ">
+      <div class="show-div show-caracteristics">
+          <div class="text-center">
+            <h3>Where I live !</h3>
+          </div>
+          <div id="map" style='width: 100%; height: 280px;'></div>
+        </div>
     </div>
 
     <div class="row">
-      <h3>Votre récapitulatif commande</h3>
     </div>
   </div>
 
-  <p>Température : <%= @order.temperature %></p>
-  <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
-  </strong> à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
 
-  <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
-  <p>PRIX : <%= @order.formula.price %>€</p>
 </div>
+
+<!-- <script src="https://wagon-google-maps-markers.herokuapp.com/assets/application-5034196864c74ae1cc5f12e6d1f71223.js" type="text/javascript"></script> -->
+
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+        handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers([
+              { "lat": <%= @order.user.profile.latitude %>, "lng": <%= @order.user.profile.longitude %> }
+            ]);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(13);
+        });
+      })
+  <% end %>
+<% end %>

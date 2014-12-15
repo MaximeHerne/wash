@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
   has_one :review
   has_one :formula
 
+
+
   accepts_nested_attributes_for :formula, :review
 
   after_create :send_new_order_email
@@ -20,4 +22,6 @@ class Order < ActiveRecord::Base
   def send_new_order_email
     OrderMailer.new_order(self).deliver
   end
+
+
 end
