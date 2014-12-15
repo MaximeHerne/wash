@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'faker'
+
 gem 'activeadmin', github: 'activeadmin'
 gem "letter_opener", group: :development
 
