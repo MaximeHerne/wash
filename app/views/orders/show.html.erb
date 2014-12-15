@@ -8,9 +8,14 @@
       <p><i class="fa fa-phone"></i> <%= @profile.phone %></p>
       <p><i class="fa fa-map-marker"></i> <%= @profile.address %>, <%= @profile.postal_code %>, <%= @profile.locality %></p>
       <h3>Votre récapitulatif commande</h3>
+      <p>Poid : 6kg</p>
       <p>Température : <%= @order.temperature %></p>
       <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
-      </strong> à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
+      </strong><br>
+      à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong><br>
+      jusqu'à <strong><%= (@order.pickup_start_date + 30.minutes).strftime("%HH%M")%></strong>
+      <!-- pendant un créneau de <strong>30 minutes.</strong> -->
+    </p>
 
       <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
       <p>PRIX : <%= @order.formula.price %>€</p>
@@ -27,7 +32,6 @@
     <div class="row">
     </div>
   </div>
-
 
 </div>
 

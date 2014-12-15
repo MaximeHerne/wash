@@ -13,7 +13,7 @@ class Profile < ActiveRecord::Base
   end
 
   def full_address
-    "#{self.user.profile.address}, #{self.user.profile.postal_code}, #{self.user.profile.locality}"
+    "#{self.address}, #{self.postal_code}, #{self.locality}"
   end
 
 end
