@@ -14,5 +14,24 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
-
+  index do
+     selectable_column
+     column :id
+     column :email
+     column :phone do |user|
+      if user.profile
+        "#{user.profile.phone}"
+      end
+     end
+     column :name do |user|
+       if user.profile
+         "#{user.profile.first_name} #{user.profile.last_name}"
+       end
+     end
+      column :adress do |user|
+        if user.profile
+          "#{user.profile.address} #{user.profile.locality} #{user.profile.postal_code}"
+        end
+      end
+  end
 end
