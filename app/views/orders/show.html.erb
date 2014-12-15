@@ -4,9 +4,9 @@
   <div class="row">
     <div class="col-xs-6">
       <h3>Vos informations</h3>
-      <p><%= @profile.first_name %> <%= @profile.last_name %></p>
-      <p>Votre téléphone : <%= @profile.phone %></p>
-      <p>Votre adresse : <%= @profile.address %>, <%= @profile.postal_code %>, <%= @profile.locality %></p>
+      <p><i class="fa fa-user"></i> <%= @profile.first_name %> <%= @profile.last_name %></p>
+      <p><i class="fa fa-phone"></i> <%= @profile.phone %></p>
+      <p><i class="fa fa-map-marker"></i> <%= @profile.address %>, <%= @profile.postal_code %>, <%= @profile.locality %></p>
       <h3>Votre récapitulatif commande</h3>
       <p>Température : <%= @order.temperature %></p>
       <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
