@@ -1,21 +1,23 @@
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-5">
-      <div class="orders">
+    <div class="col-xs-12">
 
-<h3 class="text-center">Commandes de <%= @profile.first_name %> sont </h3>
-<ul>
-  <% @orders.each do |order| %>
-    <li>Commande n°<%= order.id %></li>
-    <li>Caractérisiques de la commande : <%= order.temperature %></li>
-    <li> Date de récupération du linge : <%= order.pickup_start_date %></li>
-    <li> Date de livraison du linge : <%= order.delivery_start_date %></li>
-    <br>
-  <% end %>
-</ul>
+      <h3>Commandes effectuées</h3>
+          <% @orders.each do |order| %>
+            <div class="row text-center">
 
-      </div>
+              <%= link_to(order) do %>
+
+                <div class="orders">
+                    <p>Récupération du linge : <strong><%= order.pickup_start_date.strftime("%d/%m/%Y") %></strong> à <strong><%= order.pickup_start_date.strftime("%Hh%M") %></strong></p>
+                    <p>Retour du linge : <strong><%= order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à <strong><%= order.delivery_start_date.strftime("%Hh%M") %></strong></p>
+                    <p>Température : <%= order.temperature %></p>
+                    <p>Prix : <%= order.formula.price if order.formula %>€</p>
+                    <p><small>Référence de la commande : <%= order.id %></small></p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
     </div>
   </div>
 </div>

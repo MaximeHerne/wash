@@ -20,7 +20,9 @@
   </div>
 
   <p>Température : <%= @order.temperature %></p>
-  <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %></strong> à partir de <%= @order.pickup_start_date.strftime("%H:%M") %> pendant un créneau de 30 minutes.</p>
+  <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
+  </strong> à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
 
-  <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <%= @order.delivery_start_date.strftime("%H:%M") %> pendant un créneau de 30 minutes.</p>
+  <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
+  <p>PRIX : <%= @order.formula.price %>€</p>
 </div>
