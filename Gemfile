@@ -1,4 +1,9 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
+
+gem "gmaps4rails"
+gem "rails-assets-underscore"
+gem "geocoder"
 
 gem 'faker'
 
