@@ -19,10 +19,8 @@
     </div>
   </div>
 
-
   <p>Température : <%= @order.temperature %></p>
-  <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date %></strong> entre ######### </p>
+  <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %></strong> à partir de <%= @order.pickup_start_date.strftime("%H:%M") %> pendant un créneau de 30 minutes.</p>
 
-  <p>Vous récuperez votre linge le <strong><%= @order.delivery_start_date %></strong> entre #########</p>
-  <h3>N'oubliez pas de mettre votre dose de lessive dans votre sac de linge sale ;)</h3>
+  <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <%= @order.delivery_start_date.strftime("%H:%M") %> pendant un créneau de 30 minutes.</p>
 </div>
