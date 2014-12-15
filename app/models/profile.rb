@@ -16,4 +16,8 @@ class Profile < ActiveRecord::Base
     "#{self.address}, #{self.postal_code}, #{self.locality}"
   end
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
 end
