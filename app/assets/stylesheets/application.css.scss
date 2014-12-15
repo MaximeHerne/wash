@@ -5,8 +5,11 @@
 @import 'navbar';
 @import 'footer';
 @import 'home';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
-
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 
 .orders {
   background-color: rgba(240, 240, 240, 0.7) ;
