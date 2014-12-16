@@ -1,4 +1,4 @@
-ActiveAdmin.register Order do
+  ActiveAdmin.register Order do
 
 
   # See permitted parameters documentation:
@@ -32,16 +32,27 @@ ActiveAdmin.register Order do
       "#{order.user.profile.full_address}" if order.user && order.user.profile
     end
     column :status
+    column :washer do |order|
+      "#{order.washer.profile.full_name}" if order.washer && order.washer.profile
+    end
     actions
   end
 
   form do |f|
-    f.input :washer, as: :select, collection: Hash[User.all.map{|u| [u.profile.full_name, u.id]}]
+    f.input :washer, as: :select, collection: Hash[User.washer.map{|u| [u.profile.full_name, u.id]}]
     f.submit
   end
-  # show do
-  #   div do
-  #     "#{order.user.profile.full_name}" if order.user && order.user.profile
-  #   end
-  # end
+
+  show do
+    div do
+      "User: #{order.user.profile.full_name}" if order.user && order.user.profile
+    end
+    div do
+      "Address: #{order.user.profile.full_address}" if order.user && order.user.profile
+    end
+    div do
+      "Washer: #{order.washer.profile.full_name}" if order.washer && order.washer.profile
+    end
+
+  end
 end
