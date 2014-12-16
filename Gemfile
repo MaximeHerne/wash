@@ -20,6 +20,8 @@ gem 'omniauth-facebook'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'bootstrap_form'
+gem 'jquery-ui-rails'
+gem 'bootstrap-datepicker-rails'
 
 gem 'simple_form'
 

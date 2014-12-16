@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-before_action :set_profile
+  before_action :set_profile
 
   def index
     @orders = current_user.orders
@@ -20,18 +20,17 @@ before_action :set_profile
     @order = Order.new
     @order.build_formula
     @formulas = Formula.all
-    @time_brackets = [["19:00 - 19:30","190000"], ["19:30 - 20:00","193000"], ["20:00 - 20:30","200000"], ["20:30 - 21:00","203000"], ["21:30 - 22:00","213000"], ["22:00 - 22:30","220000"], ["22:30 - 23:00","223000"], ["23:00 - 23:30","230000"]]
-    @temperatures = [["FROID","FROID"], ["30°","30°"], ["40°","40°"], ["50°","50°"], ["60°","60°"]]
   end
 
   def create
     @order = Order.new(formula: Formula.find(order_params[:formula_attributes][:id]), temperature: order_params[:temperature])
 
-    order_params_with_time[:pickup_start_date].gsub!("-","")
-    @order.pickup_start_date = DateTime.parse("#{order_params_with_time[:pickup_start_date]}#{order_params_with_time[:pickup_start_time]}")
+    pickup_time = convert_to_datetime(order_params_with_time[:pickup_start_date], order_params_with_time[:pickup_start_time])
+    delivery_time = convert_to_datetime(order_params_with_time[:delivery_start_date], order_params_with_time[:delivery_start_time])
 
-    order_params_with_time[:delivery_start_date].gsub!("-","")
-    @order.delivery_start_date = DateTime.parse("#{order_params_with_time[:delivery_start_date]}#{order_params_with_time[:delivery_start_time]}")
+    @order.pickup_start_date = pickup_time
+    @order.delivery_start_date = delivery_time
+
     @order.user = current_user
 
     if @order.save
@@ -53,5 +52,11 @@ before_action :set_profile
 
   def set_profile
     @profile = Profile.find(current_user.profile)
+  end
+
+  def convert_to_datetime(date_string, time_string)
+    date = DateTime.strptime(date_string, '%m/%d/%Y')
+    time_in_seconds = Time.parse(time_string).seconds_since_midnight.seconds
+    (date + time_in_seconds).to_datetime
   end
 end

@@ -1,34 +1,45 @@
 <%= simple_form_for @order do |f| %>
   <div class="text-center">
     <%= f.simple_fields_for :formula do |formula| %>
-      <%= formula.input :id, label: 'Formule', collection: @formulas, as: :radio_buttons %>
+      <%= formula.input :id, label: 'Formule', collection: @formulas, as: :radio_buttons, checked: 2 %>
     <% end %>
-    <%= f.input :temperature, collection: @temperatures, as: :radio_buttons %>
+    <%= f.input :temperature, collection: temperatures, as: :radio_buttons, checked: temperatures[1] %>
   </div>
 
   <div class="row">
     <div class="col-xs-6">
-      <%= f.input :pickup_start_date, as: :date, html5: true %>
-
-      <select name = "order[pickup_start_time]">
-        <% @time_brackets.each do  |time_bracket|%>
-          <option value = <%= time_bracket[1] %>><%= time_bracket[0]%></option>
-        <% end %>
-      </select>
+      <%= f.input :pickup_start_date, as: :string %>
+      <%= f.input :pickup_start_time, collection: brackets, prompt: "Select a period" %>
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :delivery_start_date, as: :date, html5: true %>
-
-      <select name = "order[delivery_start_time]">
-        <% @time_brackets.each do  |time_bracket|%>
-          <option value = <%= time_bracket[1] %>><%= time_bracket[0]%></option>
-        <% end %>
-      </select>
-
+      <%= f.input :delivery_start_date, as: :string %>
+      <%= f.input :delivery_start_time, collection: brackets, prompt: "Select a period" %>
     </div>
   </div>
   <div class="text-center">
     <%= f.button :submit %>
   </div>
+<% end %>
+
+
+<%= content_for(:js) do %>
+  <script>
+    $(document).ready(function(){
+      $('#order_pickup_start_date ').datepicker({
+          startDate: "today",
+          endDate: "+7d",
+          autoclose: true,
+          weekStart: 1,
+          todayHighlight: true
+      });
+      $('#order_delivery_start_date ').datepicker({
+          startDate: "today",
+          endDate: "+7d",
+          autoclose: true,
+          weekStart: 1,
+          todayHighlight: true
+      });
+    });
+  </script>
 <% end %>
