@@ -3,8 +3,8 @@ class OrderMailer < ActionMailer::Base
 
   def new_order(order)
     @order = order
-
-   mail(to: @order.user.email, subject: 'Nouvelle commande confirmée')
-   mail(to: 'contact@washed.fr', subject: 'Nouvelle commande confirmée')
+    mail( to: @order.user.email,
+          bcc: "contact@washed.fr" ,
+          subject: 'Nouvelle commande confirmée')
   end
 end
