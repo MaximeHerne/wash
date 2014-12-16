@@ -18,8 +18,12 @@ ActiveAdmin.register Order do
     selectable_column
     column :id
     column :user_id
-    column :user do |order|
+    column :name do |order|
       "#{order.user.profile.full_name}" if order.user && order.user.profile
+    end
+    column :created_at
+    column :email do |order|
+      "#{order.user.email}" if order.user
     end
     column :temperature
     column :pickup_start_date

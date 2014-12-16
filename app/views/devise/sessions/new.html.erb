@@ -1,6 +1,6 @@
 <%= render 'layouts/form_wrapper_beginning' %>
 
-<h2>Log in</h2>
+<h2>Connexion</h2>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.email_field :email, autofocus: true %>
@@ -10,9 +10,9 @@
     <%= f.check_box :remember_me %>
   <% end -%>
 
-  <%= f.submit "Log in" %>
+  <%= f.submit "Connexion" %>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
 
 <%= render 'layouts/form_wrapper_end' %>
