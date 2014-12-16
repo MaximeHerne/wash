@@ -22,8 +22,10 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Connexion avec #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary"%>
+    <%= link_to "Connexion avec #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-lg col-xs-12 button-fb"%>
+    <br>
     <br>
     <br>
   <% end -%>
 <% end -%>
+
