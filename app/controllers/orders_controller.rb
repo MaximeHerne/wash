@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @profile = Profile.find(current_user.profile)
+    @profile = current_user.profile
     @profile_coordinates = { lat: @profile.latitude, lng: @profile.longitude }
     if @order.user == current_user
       render :show
