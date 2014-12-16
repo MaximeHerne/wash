@@ -10,14 +10,14 @@
       <h3>Votre récapitulatif commande</h3>
       <p>Poid : 6kg</p>
       <p>Température : <%= @order.temperature %></p>
-      <p>Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
+      <p><i class="fa fa-calendar"></i> Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %>
       </strong><br>
-      à partir de <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong><br>
-      jusqu'à <strong><%= (@order.pickup_start_date + 30.minutes).strftime("%HH%M")%></strong>
-      <!-- pendant un créneau de <strong>30 minutes.</strong> -->
+      <i class="fa fa-clock-o"></i> entre <strong><%= @order.pickup_start_date.strftime("%HH%M") %></strong> et <strong><%= (@order.pickup_start_date + 30.minutes).strftime("%HH%M")%></strong>
     </p>
 
-      <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> à partir de <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong> pendant un créneau de <strong>30 minutes.</strong></p>
+      <p><i class="fa fa-calendar"></i> Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong><br>
+        <i class="fa fa-clock-o"></i> entre <strong><%= @order.delivery_start_date.strftime("%HH%M") %></strong>
+        et <strong><%= (@order.delivery_start_date + 30.minutes).strftime("%HH%M") %></strong></p>
       <p>PRIX : <%= @order.formula.price %>€</p>
     </div>
     <div class="col-xs-6 ">
