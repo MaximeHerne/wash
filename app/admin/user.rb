@@ -33,5 +33,6 @@ ActiveAdmin.register User do
           "#{user.profile.address} #{user.profile.locality} #{user.profile.postal_code}"
         end
       end
+    actions
   end
 end
