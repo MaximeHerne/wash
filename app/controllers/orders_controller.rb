@@ -44,11 +44,11 @@ before_action :set_profile
 
   private
    def order_params
-    params.require(:order).permit(:temperature, :formula_attributes => [:id], :washer_id)
+    params.require(:order).permit(:temperature, :formula_attributes => [:id])
   end
 
   def order_params_with_time
-    params.require(:order).permit(:temperature, :pickup_start_date, :pickup_start_time, :delivery_start_date, :delivery_start_time, :formula_attributes => [:id], :washer_id)
+    params.require(:order).permit(:temperature, :pickup_start_date, :pickup_start_time, :delivery_start_date, :delivery_start_time, :formula_attributes => [:id])
   end
 
   def set_profile
