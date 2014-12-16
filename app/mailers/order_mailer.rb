@@ -5,5 +5,6 @@ class OrderMailer < ActionMailer::Base
     @order = order
 
    mail(to: @order.user.email, subject: 'Nouvelle commande confirmée')
+   mail(to: 'contact@washed.fr', subject: 'Nouvelle commande confirmée')
   end
 end
