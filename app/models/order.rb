@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
   has_one :review
   has_one :formula
 
+  validates_presence_of :temperature, :pickup_start_date, :pickup_start_time, :delivery_start_date, :delivery_start_time
+
   accepts_nested_attributes_for :formula, :review
 
   after_create :send_new_order_email

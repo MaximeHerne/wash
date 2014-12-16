@@ -8,17 +8,17 @@
 
   <div class="row">
     <div class="col-xs-6">
-      <%= f.input :pickup_start_date, as: :string %>
-      <%= f.input :pickup_start_time, collection: brackets, prompt: "Select a period" %>
+      <%= f.input :pickup_start_date, as: :string, label: "Récupération le", placeholder: "Quel jour ?" %>
+      <%= f.input :pickup_start_time, collection: brackets, label: "heure", prompt: "Quelle heure ?" %>
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :delivery_start_date, as: :string %>
-      <%= f.input :delivery_start_time, collection: brackets, prompt: "Select a period" %>
+      <%= f.input :delivery_start_date, as: :string, label: "Retour le", placeholder: "Quel jour ?" %>
+      <%= f.input :delivery_start_time, collection: brackets, label: "heure", prompt: "Quelle heure ?" %>
     </div>
   </div>
   <div class="text-center">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'COMMANDER', class: "btn btn-primary btn-lg col-xs-12 button-order" %>
   </div>
 <% end %>
 
