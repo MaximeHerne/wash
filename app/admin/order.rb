@@ -1,4 +1,4 @@
-ActiveAdmin.register Order do
+  ActiveAdmin.register Order do
 
 
   # See permitted parameters documentation:
