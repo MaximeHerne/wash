@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217111529) do
+ActiveRecord::Schema.define(version: 20141217171751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +41,16 @@ ActiveRecord::Schema.define(version: 20141217111529) do
   create_table "orders", force: true do |t|
     t.integer  "user_id"
     t.string   "temperature"
-    t.datetime "pickup_start_date"
-    t.datetime "delivery_start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "review_id"
     t.integer  "washer_id"
     t.datetime "finished_at"
     t.integer  "formula_id"
+    t.date     "pickup_start_date"
+    t.date     "delivery_start_date"
+    t.integer  "pickup_bracket"
+    t.integer  "delivery_bracket"
   end
 
   add_index "orders", ["formula_id"], name: "index_orders_on_formula_id", using: :btree
