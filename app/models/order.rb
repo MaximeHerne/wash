@@ -1,17 +1,26 @@
 class Order < ActiveRecord::Base
+  extend Enumerize
+
+  enumerize :pickup_bracket, in: {
+    '19h00 - 20h00' => 1,
+    '20h00 - 21h00' => 2
+  }
+
+  enumerize :delivery_bracket, in: {
+    '19h00 - 20h00' => 1,
+    '20h00 - 21h00' => 2
+  }
+
   belongs_to :user
   belongs_to :washer, foreign_key: :washer_id, class_name: 'User'
   belongs_to :formula
   has_one :review
 
-  validates_presence_of :temperature, :pickup_start_date, :delivery_start_date, :formula
+  validates_presence_of :temperature, :pickup_start_date, :delivery_start_date, :formula, :pickup_bracket, :delivery_bracket
 
   accepts_nested_attributes_for :formula, :review
 
   # after_create :send_new_order_email
-
-  attr_accessor :start_time_range, :end_time_range
-  attr_accessor :pickup_date, :pickup_start_time, :delivery_start_time, :delivery_date
 
   def formula_attributes=(hash)
     self.formula = Formula.find(hash[:id])

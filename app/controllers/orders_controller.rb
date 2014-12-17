@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @pickup_start_time = @order.pickup_start_time
     @profile = current_user.profile
     @profile_coordinates = { lat: @profile.latitude, lng: @profile.longitude }
     if @order.user == current_user
@@ -39,7 +38,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params_with_time
-    params.require(:order).permit(:pickup_start_date, :delivery_start_date, :temperature, :pickup_date, :pickup_start_time, :delivery_date, :delivery_start_time, :formula_attributes => [:id])
+    params.require(:order).permit(:delivery_bracket, :pickup_bracket, :pickup_start_date, :delivery_start_date, :temperature, :pickup_date, :pickup_start_time, :delivery_date, :delivery_start_time, :formula_attributes => [:id])
   end
 
   def set_profile

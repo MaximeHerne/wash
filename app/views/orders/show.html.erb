@@ -14,12 +14,12 @@
       <p>Température : <%= @order.temperature %></p>
       <p><i class="fa fa-calendar"></i> Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date %>
       </strong><br>
-      <i class="fa fa-clock-o"></i> entre <strong><%= @order.pickup_start_time %></strong> et <strong><%= @order.pickup_start_date %></strong>
+      <i class="fa fa-clock-o"></i> entre <strong><%= @order.pickup_bracket %></strong> et <strong><%= @order.pickup_start_date %></strong>
     </p>
 
       <p><i class="fa fa-calendar"></i> Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date %></strong><br>
         <i class="fa fa-clock-o"></i> entre <strong><%= @order.delivery_start_date %></strong>
-        et <strong><%= @order.delivery_start_date %></strong></p>
+        et <strong><%= @order.delivery_bracket %></strong></p>
       <p>PRIX : <%= @order.formula.price %>€</p>
     </div>
     <div class="col-xs-6 ">
