@@ -14,7 +14,9 @@ ActiveAdmin.register Order do
     end
     column :temperature
     column :pickup_start_date
+    column :pickup_bracket
     column :delivery_start_date
+    column :delivery_bracket
     column :address do |order|
       "#{order.user.profile.full_address}" if order.user && order.user.profile
     end
@@ -29,7 +31,9 @@ ActiveAdmin.register Order do
     f.input :washer, as: :select, collection: Hash[User.washer.map{|u| [u.profile.full_name, u.id]}]
     f.input :temperature
     f.input :pickup_start_date
+    f.input :pickup_bracket
     f.input :delivery_start_date
+    f.input :delivery_bracket
     f.input :formula
 
     f.submit
