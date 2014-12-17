@@ -1,3 +1,3 @@
 class Formula < ActiveRecord::Base
-  belongs_to :order
+  has_many :order
 end

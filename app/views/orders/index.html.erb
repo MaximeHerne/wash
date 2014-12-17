@@ -9,8 +9,8 @@
               <%= link_to(order) do %>
 
                 <div class="orders">
-                    <p>Récupération du linge : <strong><%= order.pickup_start_date.strftime("%d/%m/%Y") %></strong> de <strong><%= order.pickup_start_date.strftime("%Hh%M") %></strong> à <strong><%= (order.pickup_start_date + 30.minutes).strftime("%HH%M") %></strong></p>
-                    <p>Retour du linge : <strong><%= order.delivery_start_date.strftime("%d/%m/%Y") %></strong> de <strong><%= order.delivery_start_date.strftime("%Hh%M") %></strong> à <strong><%= (order.delivery_start_date + 30.minutes).strftime("%Hh%M") %></strong></p>
+                    <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> de <strong><%= order.pickup_start_date %></strong> à <strong><%= order.pickup_start_date %></strong></p>
+                    <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> de <strong><%= order.delivery_start_date %></strong> à <strong><%= order.delivery_start_date %></strong></p>
                     <p>Température : <%= order.temperature %></p>
                     <p>Prix : <%= order.formula.price if order.formula %>€</p>
                     <p><small>Référence de la commande : <%= order.id %></small></p>

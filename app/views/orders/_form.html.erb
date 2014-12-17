@@ -8,12 +8,12 @@
 
   <div class="row">
     <div class="col-xs-6">
-      <%= f.input :pickup_start_date, as: :string, label: "Récupération le", placeholder: "Quel jour ?" %>
+      <%= f.input :pickup_date, as: :string, label: "Récupération le", placeholder: "Quel jour ?" %>
       <%= f.input :pickup_start_time, collection: brackets, label: "heure", prompt: "Quelle heure ?" %>
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :delivery_start_date, as: :string, label: "Retour le", placeholder: "Quel jour ?" %>
+      <%= f.input :delivery_date, as: :string, label: "Retour le", placeholder: "Quel jour ?" %>
       <%= f.input :delivery_start_time, collection: brackets, label: "heure", prompt: "Quelle heure ?" %>
     </div>
   </div>
@@ -26,14 +26,14 @@
 <%= content_for(:js) do %>
   <script>
     $(document).ready(function(){
-      $('#order_pickup_start_date ').datepicker({
+      $('#order_pickup_date ').datepicker({
           startDate: "today",
           endDate: "+7d",
           autoclose: true,
           weekStart: 1,
           todayHighlight: true
       });
-      $('#order_delivery_start_date ').datepicker({
+      $('#order_delivery_date ').datepicker({
           startDate: "today",
           endDate: "+7d",
           autoclose: true,
