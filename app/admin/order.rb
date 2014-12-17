@@ -1,18 +1,5 @@
-  ActiveAdmin.register Order do
-
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  permit_params :list, :of, :washer_id, :on, :order
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+ActiveAdmin.register Order do
+  permit_params :washer_id, :temperature, :pickup_start_date, :delivery_start_date, :formula_id
 
   index do
     selectable_column
@@ -40,6 +27,11 @@
 
   form do |f|
     f.input :washer, as: :select, collection: Hash[User.washer.map{|u| [u.profile.full_name, u.id]}]
+    f.input :temperature
+    f.input :pickup_start_date
+    f.input :delivery_start_date
+    f.input :formula
+
     f.submit
   end
 

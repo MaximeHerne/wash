@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to order_path(@order)
     else
-      puts @order.errors.to_yaml
       render :new, alert: @order.errors.full_messages
     end
   end
@@ -40,7 +39,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params_with_time
-    params.require(:order).permit(:temperature, :pickup_date, :pickup_start_time, :delivery_date, :delivery_start_time, :formula_attributes => [:id])
+    params.require(:order).permit(:pickup_start_date, :delivery_start_date, :temperature, :pickup_date, :pickup_start_time, :delivery_date, :delivery_start_time, :formula_attributes => [:id])
   end
 
   def set_profile
