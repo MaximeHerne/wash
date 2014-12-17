@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @order.build_formula
+    # @order.build_formula
     @formulas = Formula.all
   end
 
