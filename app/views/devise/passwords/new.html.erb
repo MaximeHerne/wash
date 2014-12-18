@@ -1,14 +1,17 @@
 <%= render 'layouts/form_wrapper_beginning' %>
 
-<h2>Forgot your password?</h2>
+<h2>Vous avez oublié votre password ?</h2>
+
+<br>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <%= f.email_field :email, autofocus: true %>
 
-  <%= f.submit "Send me reset password instructions" %>
+  <%= f.submit "Envoyer le lien reset" %>
 <% end %>
+<br>
 
 <%= render "devise/shared/links" %>
 
