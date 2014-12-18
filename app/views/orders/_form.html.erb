@@ -12,15 +12,15 @@
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :pickup_bracket, as: :radio_buttons %>
+      <%= f.input :pickup_bracket, as: :select, label: "Heure", prompt: "Quelle heure ?" %>
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :delivery_start_date, as: :string, label: "Retour le", placeholder: "Quel jour ?", input_html: { 'data-date-format' => "YYYY-MM-DD hh:mm" }%>
+      <%= f.input :delivery_start_date, as: :string, label: "Retour le", placeholder: "Quel jour ?", input_html: { 'data-date-format' => "YYYY-MM-DD" }%>
     </div>
 
     <div class="col-xs-6">
-      <%= f.input :delivery_bracket, as: :radio_buttons %>
+      <%= f.input :delivery_bracket, as: :select, label: "Heure", prompt: "Quelle heure ?" %>
     </div>
 
   </div>
