@@ -1,11 +1,10 @@
-
 <%= bootstrap_form_for(@profile) do |f| %>
-  <%= f.text_field :first_name, autofocus: true, required: true %>
-  <%= f.text_field :last_name, autocomplete: "off", required: true %>
-  <%= f.text_field :phone, autocomplete: "off", required: true %>
-  <%= f.text_field :address, autocomplete: "off", required: true %>
-  <%= f.text_field :postal_code, autocomplete: "off", required: true %>
-  <%= f.text_field :locality, autocomplete: "off", required: true %>
+  <%= f.text_field :first_name, autofocus: true, required: true, label: "Prénom" %>
+  <%= f.text_field :last_name, autocomplete: "off", required: true, label: "Nom" %>
+  <%= f.text_field :phone, autocomplete: "off", help: "Ne servira que pour le livreur", required: true, label: "Téléphone" %>
+  <%= f.text_field :address, autocomplete: "off", required: true, label: "Adresse" %>
+  <%= f.text_field :postal_code, autocomplete: "off", required: true, label: "Code postal" %>
+  <%= f.text_field :locality, autocomplete: "off", required: true, label: "Ville" %>
   <%= f.submit "Sauvegardez" %>
   <%= link_to "Changer mon mot de passe", edit_user_registration_path(@profile) %>
 <% end %>
