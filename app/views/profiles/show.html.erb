@@ -1,16 +1,22 @@
-<%= render 'layouts/form_wrapper_beginning' %>
+  <%= render 'layouts/form_wrapper_beginning' %>
 
-  <h1>Profil de <%= @profile.first_name %> </h1>
+      <div class="profile">
+        <h1 class="text-center">Profil de <%= @profile.first_name %> <%= image_tag current_user.picture || "user_alternative_pic.png", id: "profile-pic"%></h1>
 
-  <ul>
-    <li> Vous êtes <%= @profile.last_name %> <%= @profile.first_name %> </li>
-    <li> Votre téléphone est le <%= @profile.phone %> </li>
-    <li> Votre adresse est : <%= @profile.address %> </li>
-    <li> Votre ville est : <%= @profile.locality %> </li>
-    <li> Votre code postal est  : <%= @profile.postal_code %> </li>
-  </ul>
 
-  <%= link_to 'Editez votre profil', edit_profile_path(@profile), class: "btn btn-danger" %>
-  <%= link_to 'Faite votre machine', new_order_path, class: "btn btn-primary" %>
+          <p><strong>Prénom :</strong> <%= @profile.last_name %></p>
+          <p><strong>Nom :</strong> <%= @profile.first_name %></p>
+          <p><strong>Téléphone :</strong><%= @profile.phone %></p>
+          <p><strong>Adresse :</strong> <%= @profile.address %></p>
+          <p><strong>Ville :</strong> <%= @profile.locality %></p>
+          <p><strong>Code postal :</strong> <%= @profile.postal_code %></p>
 
-<%= render 'layouts/form_wrapper_end' %>
+
+        <%= link_to 'Editez votre profil', edit_profile_path(@profile), class: "btn btn-danger" %>
+        <br>
+        <br>
+        <%= link_to 'Faite votre machine', new_order_path, class: "btn btn-primary", id:"command-btn" %>
+      </div>
+
+  <%= render 'layouts/form_wrapper_end' %>
+

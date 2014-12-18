@@ -1,35 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h3>Commandes effectuées</h3>
-          <% @orders_sent.each do |order| %>
-            <div class="row text-center">
-              <%= link_to(order) do %>
-                <div class="orders">
-                    <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
-                    <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
-                    <p>Température : <%= order.temperature %></p>
-                    <p>Prix : <%= order.formula.price if order.formula %>€</p>
-                    <p><small>Référence de la commande : <%= order.id %></small></p>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+ <%= render 'layouts/form_wrapper_beginning' %>
 
-      <h3>Commandes à effectuer</h3>
-      <% @orders_received.each do |order| %>
-        <div class="row text-center">
-          <%= link_to(order) do %>
+      <h3 class="text-center">Commandes effectuées</h3>
+        <% @orders_sent.each do |order| %>
+          <div class="row">
             <div class="orders">
+              <%= link_to(order) do %>
                 <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
                 <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
                 <p>Température : <%= order.temperature %></p>
                 <p>Prix : <%= order.formula.price if order.formula %>€</p>
                 <p><small>Référence de la commande : <%= order.id %></small></p>
+                <% end %>
             </div>
-          <% end %>
+          </div>
+        <% end %>
+
+      <h3>Commandes à effectuer</h3>
+      <% @orders_received.each do |order| %>
+        <div class="row ">
+          <div class="orders">
+          <%= link_to(order) do %>
+            <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
+            <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
+            <p>Température : <%= order.temperature %></p>
+            <p>Prix : <%= order.formula.price if order.formula %>€</p>
+            <p><small>Référence de la commande : <%= order.id %></small></p>
+            <% end %>
+          </div>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
+
+   <%= render 'layouts/form_wrapper_end' %>
