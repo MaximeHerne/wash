@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   before_action :set_profile
 
   def index
-    @orders = current_user.orders
+    @orders_sent = current_user.orders
+    @orders_received = current_user.orders.where(washer: current_user)
   end
 
   def show
