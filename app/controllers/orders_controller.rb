@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, only:[:index, :show, :create]
 
   def index
     @orders_sent = current_user.orders
@@ -18,9 +18,14 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
-    @order.build_formula
-    @formulas = Formula.all
+    if current_user.profile.nil?
+      redirect_to new_profile_path(current_user)
+    else
+      set_profile
+      @order = Order.new
+      @order.build_formula
+      @formulas = Formula.all
+    end
   end
 
   def create
