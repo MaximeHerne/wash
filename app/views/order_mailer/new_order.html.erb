@@ -1,12 +1,31 @@
 <div class="container text-center">
-<p>
-  de <%= @order.pickup_start_time %>
-  <%= @order.delivery_start_time %>
-  Hello <%= @order.user.profile.first_name %>,<br>
-  Ta commande est confirmée, voici ce que tu as commandé : <br>
-  Une cycle de machine de <%= @order.temperature %>. <br>
-  Ton adresse : <%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %><br>
-  Nous passons récupérer votre linge le <strong><%= @order.pickup_start_date %></strong> de <%= @order.pickup_start_date %> à <strong><%= @order.pickup_start_date %></strong>
-  <p>Vous récupérez votre linge propre et sec <strong><%= @order.delivery_start_date %></strong> de <%= @order.delivery_start_date %> à <strong><%= @order.delivery_start_date %></strong>.</p>
-</p>
+  <h3>
+    Hello <%= @order.user.profile.first_name %>,
+  </h3>
+  <p>
+    Félicitations, ta commande est confirmée !
+  </p>
+  <p>
+    Tu trouveras ci-dessous le récapitulatif de celle-ci :
+  </p>
+  <p>
+    Récupération : <br>
+    le <strong><%= @order.pickup_start_date %></strong> entre <strong><%= @order.pickup_bracket %></strong>.
+  </p>
+  <p>
+    Retour : <br>
+    le  <strong><%= @order.delivery_start_date %></strong> entre <strong><%= @order.delivery_bracket %></strong>.
+  </p>
+  <p>
+    Poid : <strong>6kg</strong>.
+  </p>
+  <p>
+    Une cycle de machine de <strong><%= @order.temperature %></strong>.
+  </p>
+  <p>
+    Ton adresse : <strong><%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %></strong>.
+  </p>
+  <p>
+    Prix : <strong><%= @order.formula.price %>€</strong>.
+  </p>
 </div>

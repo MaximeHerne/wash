@@ -2,13 +2,27 @@ class Order < ActiveRecord::Base
   extend Enumerize
 
   enumerize :pickup_bracket, in: {
-    '19h00 - 20h00' => 1,
-    '20h00 - 21h00' => 2
+    '19h00 - 19h30' => 1,
+    '19h30 - 20h00' => 2,
+    '20h00 - 20h30' => 3,
+    '20h30 - 21h00' => 4,
+    '21h00 - 21h30' => 5,
+    '21h30 - 22h00' => 6,
+    '22h00 - 22h30' => 7,
+    '22h30 - 23h00' => 8,
+    '23h00 - 23h30' => 9
   }
 
   enumerize :delivery_bracket, in: {
-    '19h00 - 20h00' => 1,
-    '20h00 - 21h00' => 2
+    '19h00 - 19h30' => 1,
+    '19h30 - 20h00' => 2,
+    '20h00 - 20h30' => 3,
+    '20h30 - 21h00' => 4,
+    '21h00 - 21h30' => 5,
+    '21h30 - 22h00' => 6,
+    '22h00 - 22h30' => 7,
+    '22h30 - 23h00' => 8,
+    '23h00 - 23h30' => 9
   }
 
   belongs_to :user
@@ -20,7 +34,7 @@ class Order < ActiveRecord::Base
 
   accepts_nested_attributes_for :formula, :review
 
-  # after_create :send_new_order_email
+  after_create :send_new_order_email
 
   def formula_attributes=(hash)
     self.formula = Formula.find(hash[:id])
