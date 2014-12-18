@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders_sent = current_user.orders
-    @orders_received = current_user.orders.where(washer: current_user)
+    @orders_received = Order.where(washer: current_user)
   end
 
   def show
