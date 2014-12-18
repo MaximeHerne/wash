@@ -1,13 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-
       <h3>Commandes effectuées</h3>
           <% @orders_sent.each do |order| %>
             <div class="row text-center">
-
               <%= link_to(order) do %>
-
                 <div class="orders">
                     <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
                     <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
@@ -19,17 +16,13 @@
             </div>
           <% end %>
 
-
-
       <h3>Commandes à effectuer</h3>
       <% @orders_received.each do |order| %>
         <div class="row text-center">
-
           <%= link_to(order) do %>
-
             <div class="orders">
-                <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> de <strong><%= order.pickup_start_date %></strong> à <strong><%= order.pickup_start_date %></strong></p>
-                <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> de <strong><%= order.delivery_start_date %></strong> à <strong><%= order.delivery_start_date %></strong></p>
+                <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
+                <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
                 <p>Température : <%= order.temperature %></p>
                 <p>Prix : <%= order.formula.price if order.formula %>€</p>
                 <p><small>Référence de la commande : <%= order.id %></small></p>
