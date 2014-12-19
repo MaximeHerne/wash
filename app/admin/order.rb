@@ -13,6 +13,7 @@ ActiveAdmin.register Order do
       "#{order.user.email}" if order.user
     end
     column :temperature
+    column :formula
     column :pickup_start_date
     column :pickup_bracket
     column :delivery_start_date
