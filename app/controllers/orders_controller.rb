@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @profile = current_user.profile
     @profile_coordinates = { lat: @profile.latitude, lng: @profile.longitude }
-    if @order.user == current_user
+    if @order.user == current_user || @order.washer == current_user
       render :show
     else
       redirect_to root_path
