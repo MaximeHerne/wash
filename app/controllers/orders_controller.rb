@@ -33,6 +33,8 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to order_path(@order)
     else
+      @order.build_formula
+      @formulas = Formula.all
       render :new, alert: @order.errors.full_messages
     end
   end
