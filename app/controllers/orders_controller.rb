@@ -30,11 +30,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.new(order_params_with_time)
-    @order.build_formula
-    @formulas = Formula.all
     if @order.save
       redirect_to order_path(@order)
     else
+      @order.build_formula
+      @formulas = Formula.all
       render :new, alert: @order.errors.full_messages
     end
   end
