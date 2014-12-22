@@ -1,9 +1,39 @@
 .jumbotron {
-  background-image: image_url('home.png');
+  background-image: image_url('homev2.jpg');
   background-size: cover;
   height: 630px;
   color: white;
-  margin-bottom: 0px;
+  margin-bottom: 40px;
   padding-top: 150px;
-  text-shadow: 1px 1px #2c3e50;
+  text-shadow: 1px 1px 3px rgb(80, 80, 80);
+}
+
+.features {
+  padding: 0 20px;
+}
+
+.comments {
+  background-image: url('gridv3.png');
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.border img {
+  border-radius: 50%;
+  padding-bottom: 4px;
+}
+
+.lead h3 {
+  background: rgba(130, 130, 130, .4);
+  display: inline-block;
+  padding: 0.2em;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 2em;
+}
+
+.lead h1 {
+  background: rgba(130, 130, 130, .4);
+  display: inline-block;
 }
