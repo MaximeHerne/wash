@@ -1,7 +1,10 @@
 // Set your navbar general settings
 $color: grey;
+$light-blue: #3498db;
+$dark-blue: #2980B9;
 $bg: #fff;
-$height: 30px;
+$height: 40px;
+$vertical-height : 20px;
 $vertical-padding: 10px;
 $horizontal-padding: 50px;
 $border-bottom-width: 0;
@@ -36,7 +39,7 @@ $profile-border-width: 2px;
   padding-left: $horizontal-padding;
   padding-right: $horizontal-padding;
   border-bottom: $border-bottom-width solid $border-bottom-color;
-  min-height: 0;
+  min-height: 60px;
 }
 
 .navbar-wagon .navbar-nav > li > a {
@@ -47,7 +50,7 @@ $profile-border-width: 2px;
 }
 
 .navbar-wagon .navbar-nav > li > a:hover {
-  color: $color;
+  color: #2980B9;
   line-height: $height;
   padding-top: $vertical-padding;
   padding-bottom: $vertical-padding;
@@ -105,7 +108,7 @@ $btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-borde
 #logo{
   height: $height;
   padding: 0px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 #profile-pic{
@@ -146,7 +149,7 @@ $btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-borde
 
 @media screen and (max-width: 768px) {
   #logo {
-    height: 50px;
+    height: 40px;
   }
   .navbar-wagon .navbar-brand,
   .navbar-wagon .navbar-brand:hover
@@ -155,5 +158,17 @@ $btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-borde
     color: $color;
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .navbar-wagon .navbar-nav > li > a {
+    color: $color;
+    line-height: $vertical-height;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
+  }
+  .navbar-wagon .navbar-nav > li > a:hover {
+    color: #2980B9;
+    line-height: $vertical-height;
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
   }
 }
