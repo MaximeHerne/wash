@@ -18,14 +18,21 @@
   padding-bottom: 20px;
 }
 
+.comment {
+  padding: 0 70px;
+}
+
 .border img {
   border-radius: 50%;
   padding-bottom: 4px;
 }
 
-.lead h3 {
-  background: rgba(130, 130, 130, .4);
+.lead {
+  background: rgba(190, 190, 190, .4);
   display: inline-block;
+}
+
+.lead h3 {
   padding: 0.2em;
   font-size: 18px;
   font-weight: 300;
@@ -33,7 +40,3 @@
   margin-bottom: 2em;
 }
 
-.lead h1 {
-  background: rgba(130, 130, 130, .4);
-  display: inline-block;
-}

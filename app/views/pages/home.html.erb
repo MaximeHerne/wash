@@ -36,42 +36,48 @@
 
 <div class="comments">
   <div class="container text-center">
-    <h3>Nos utilisateurs adorent</h3>
+    <h3>Nos utilisateurs en parlent</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <div class="border">
-        <%= image_tag ('avis_coline.jpg') %></div>
-        <p>Je viens d'utiliser pour la première fois votre service et c'est juste top.</p>
+        <div class="comment">
+          <div class="border">
+          <%= image_tag ('avis_coline.jpg') %></div>
+          <p>Je viens d'utiliser pour la première fois votre service et c'est juste top ! Merci !</p>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="border">
-        <%= image_tag ('avis_coline.jpg') %></div>
-        <p>Avant j'allais à la laverie mais ça c'était avant.. Merci washed !</p>
+        <div class="comment">
+          <div class="border">
+          <%= image_tag ('avis_coline.jpg') %></div>
+          <p>Washed s'occupe de faire mes machines : une corvée en moins, du temps pour moi en plus !</p>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <div class="border">
-        <%= image_tag ('avis_coline.jpg') %></div>
-        <p>Je viens d'utiliser pour la première fois votre service et c'est juste top.</p>
+        <div class="comment">
+          <div class="border">
+          <%= image_tag ('avis_coline.jpg') %></div>
+          <p>On essaye une fois, et on ne peut plus s'en passer !</p>
+        </div>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="border">
-        <%= image_tag ('avis_coline.jpg') %></div>
-        <p>Avant j'allais à la laverie mais ça c'était avant.. Merci washed !</p>
+        <div class="comment">
+          <div class="border">
+          <%= image_tag ('avis_coline.jpg') %></div>
+          <p>Avant j'allais à la laverie mais ça c'était avant.. Merci washed !</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
 
-
-    <div class="spacer"></div>
-
-    <div class="text-center">
-      <div class="spacer"></div>
-      <h3>Simplifie-toi la vie</h3>
-      <%= link_to "J'ai du linge à laver", new_order_path, class: "btn btn-primary btn-lg" %>
-      <div class="spacer"></div>
-      <div class="spacer"></div>
-    </div>
+<div class="text-center">
+  <h4>La première machine est gratuite !</h4>
+  <br>
+  <%= link_to "J'ai du linge à laver", new_order_path, class: "btn btn-primary btn-lg" %>
+</div>
