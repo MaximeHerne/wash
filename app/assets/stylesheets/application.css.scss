@@ -13,6 +13,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  margin-top: 60px;
 }
 
 .orders {
@@ -50,3 +51,18 @@ body {
   margin-top : 3em;
 }
 
+.banner {
+  height: 250px;
+  h1 {
+    color: #fff;
+    line-height: 250px;
+  }
+}
+
+.banner-contact {
+  background-image: image_url('banner_contact.jpeg');
+}
+
+.banner-faq {
+  background-image: image_url('banner_faq.jpg');
+}
