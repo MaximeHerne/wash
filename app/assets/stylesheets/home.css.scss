@@ -13,7 +13,6 @@
 }
 
 .comments {
-  background-image: url('gridv3.png');
   padding-top: 5px;
   padding-bottom: 20px;
 }
@@ -28,7 +27,7 @@
 }
 
 .lead {
-  background: rgba(190, 190, 190, .4);
+  background: rgba(190, 190, 190, .7);
   display: inline-block;
 }
 
@@ -40,3 +39,19 @@
   margin-bottom: 2em;
 }
 
+.light-grey {
+  background-color: #ecf0f1;
+}
+
+.spacer {
+  margin-top : 3em;
+}
+
+.counter {
+  h2 {
+    color: $light-blue;
+  }
+  h4 {
+    color: #7f8c8d;
+  }
+}
