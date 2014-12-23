@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6 padding-right">
       <h4>Débuter avec Washed</h4>
       <p id="question1" class="pointer">Comment s’inscrire sur Washed ?</p>
       <p class="hidden" id="answer1">Pour <%= link_to 's’inscrire sur Washed', new_user_registration_path %>, rien de plus simple, il vous suffit d’entrer votre adresse mail et votre mot de passe. </p>
@@ -19,7 +19,7 @@
       <p id="question4" class="pointer">Peut-on avoir une lingette anti-décoloration ?</p>
       <p class="hidden" id="answer4">Oui, la lingette anti-décoloration et la lessive sont comprises.</p>
       <p id="question5" class="pointer">Je n'habite pas à Paris, puis-je tout de même bénéficier du service ?</p>
-      <p class="hidden" id="answer5">Nous sommes actuellement en activité dans Paris intra-muros et nous allons très prochainement étendre notre activité à toute l’Ile de France et à plusieurs grandes villes (Marseille, Lyon, Lille, Bordeaux). Inscrivez-vous pour être au courant de la sortie de notre service dans votre quartier</p>
+      <p class="hidden" id="answer5">Nous sommes actuellement en activité dans Paris intra-muros et nous allons très prochainement étendre notre activité à toute l’Ile de France et à plusieurs grandes villes (Marseille, Lyon, Lille, Bordeaux).</p>
     </div>
     <div class="col-xs-12 col-sm-6">
       <h4>L'offre Washed</h4>
@@ -39,9 +39,10 @@
     </div>
   </div>
   <br>
+  <br>
   <div class="row">
     <div class="col-xs-12  col-sm-4 col-sm-offset-4 text-center">
-      <p class="bold">On ne répond pas à une de vos questions ? Posez-nous là à <%= mail_to "contact@washed.fr" %></p>
+      <p>On ne répond pas à une de vos questions ? Posez-nous là à <%= mail_to "contact@washed.fr" %></p>
     </div>
   </div>
 </div>
@@ -118,13 +119,4 @@
       });
     });
   </script>
-
-
-
-
-
-
-
-
-
 <% end %>
