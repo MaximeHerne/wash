@@ -1,10 +1,16 @@
-  <%= @order.pickup_start_date %>
-  <%= @order.delivery_start_date %>
+Hello <%= @order.user.profile.first_name %>,
 
+Félicitations, ta commande est confirmée !
 
-  Hello <%= @order.user.profile.first_name %>,
-  Ta commande est confirmée, voici ce que tu as commandé :
-  Une machine de <%= @order.temperature %>.
-  Ton adresse : <%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %>
-  Nous passons récupérer votre linge le <%= @order.pickup_start_date %> à partir de <%= @order.pickup_start_date %> pendant un créneau de 30 minutes.
-  Vous récupérez votre linge propre et sec <%= @order.delivery_start_date %> à partir de <%= @order.delivery_start_date %> pendant un créneau de 30 minutes.
+Tu trouveras ci-dessous le récapitulatif de celle-ci :
+
+Une cycle de machine à <strong><%= @order.temperature %></strong>.
+Poids de ton linge : <strong>6kg</strong>.
+Une formule <strong><%= @order.formula.name %></strong><br>
+Récupération : <br>
+le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= @order.pickup_bracket %></strong>.
+Retour : <br>
+le  <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= @order.delivery_bracket %></strong>.
+Ton adresse : <strong><%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %></strong>.
+
+Prépare ton sac de linge sale, nous chauffons les machines !

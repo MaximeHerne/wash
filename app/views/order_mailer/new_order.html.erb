@@ -1,31 +1,44 @@
-<div class="container text-center">
-  <h3>
-    Hello <%= @order.user.profile.first_name %>,
-  </h3>
-  <p>
-    Félicitations, ta commande est confirmée !
-  </p>
-  <p>
-    Tu trouveras ci-dessous le récapitulatif de celle-ci :
-  </p>
-  <p>
-    Récupération : <br>
-    le <strong><%= @order.pickup_start_date %></strong> entre <strong><%= @order.pickup_bracket %></strong>.
-  </p>
-  <p>
-    Retour : <br>
-    le  <strong><%= @order.delivery_start_date %></strong> entre <strong><%= @order.delivery_bracket %></strong>.
-  </p>
-  <p>
-    Poid : <strong>6kg</strong>.
-  </p>
-  <p>
-    Une cycle de machine de <strong><%= @order.temperature %></strong>.
-  </p>
-  <p>
-    Ton adresse : <strong><%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %></strong>.
-  </p>
-  <p>
-    Prix : <strong><%= @order.formula.price %>€</strong>.
-  </p>
-</div>
+<html>
+  <body>
+      <h1>
+        Hello <%= @order.user.profile.first_name %>,
+      </h1>
+
+      <p>
+        Félicitations, ta commande est confirmée !
+      </p>
+
+      <p>
+        Tu trouveras ci-dessous le récapitulatif de celle-ci :
+      </p>
+
+      <p>
+        Une cycle de machine à <strong><%= @order.temperature %></strong>.
+      </p>
+
+      <p>
+        Poids de ton linge : <strong>6kg</strong>.
+      </p>
+
+      <p>
+        Une formule <strong><%= @order.formula.name %></strong><br>
+      </p>
+
+      <p>
+        Récupération : <br>
+        le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= @order.pickup_bracket %></strong>.
+      </p>
+
+      <p>
+        Retour : <br>
+        le  <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= @order.delivery_bracket %></strong>.
+      </p>
+
+      <p>
+        Ton adresse : <strong><%= @order.user.profile.address %>, <%= @order.user.profile.postal_code %> <%= @order.user.profile.locality %></strong>.
+      </p>
+
+      <h3>Prépare ton sac de linge sale, nous chauffons les machines !</h3>
+    </div>
+  </body>
+</html>
