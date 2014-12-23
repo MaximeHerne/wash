@@ -24,13 +24,13 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-6">
-              <p>Nous passons prendre votre linge : </p>
-              <p><i class="fa fa-calendar"></i> le <strong><%= @order.pickup_start_date %></strong><br>
+              <p>Nous passons prendre ton linge : </p>
+              <p><i class="fa fa-calendar"></i> le <strong><%= @order.pickup_start_date.strftime("%d/%m/%Y") %></strong><br>
               <p><i class="fa fa-clock-o"></i> entre <strong><%= @order.pickup_bracket %></strong></p>
             </div>
             <div class="col-xs-6">
-              <p>Vous récupérez votre linge : </p>
-              <p><i class="fa fa-calendar"></i> le <strong><%= @order.delivery_start_date %></strong></p>
+              <p>Tu récupére ton linge : </p>
+              <p><i class="fa fa-calendar"></i> le <strong><%= @order.delivery_start_date.strftime("%d/%m/%Y") %></strong></p>
               <p><i class="fa fa-clock-o"></i> entre <strong><%= @order.delivery_bracket %></strong></p>
             </div>
           </div>

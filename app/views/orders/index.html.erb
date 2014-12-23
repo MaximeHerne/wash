@@ -1,33 +1,35 @@
  <%= render 'layouts/form_wrapper_beginning' %>
 
-      <h3 class="text-center">Commandes effectuées</h3>
-        <% @orders_sent.each do |order| %>
-          <div class="row">
-            <div class="orders">
-              <%= link_to(order) do %>
-                <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
-                <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
-                <p>Température : <%= order.temperature %></p>
-                <p>Prix : <%= order.formula.price if order.formula %>€</p>
-                <p><small>Référence de la commande : <%= order.id %></small></p>
-                <% end %>
-            </div>
-          </div>
-        <% end %>
+<h3 class="text-center">Commandes passées</h3>
+  <% @orders_sent.each do |order| %>
+    <div class="row">
+      <div class="orders">
+        <%= link_to(order) do %>
+          <p>Récupération du linge : <strong><%= order.pickup_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
+          <p>Retour du linge : <strong><%= order.delivery_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
+          <p>Température : <%= order.temperature %></p>
+          <p>Prix : <%= order.formula.price if order.formula %>€</p>
+          <p><small>Référence de la commande : <%= order.id %></small></p>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
 
-      <h3 class="text-center">Commandes à washer</h3>
-      <% @orders_received.each do |order| %>
-        <div class="row ">
-          <div class="orders">
-          <%= link_to(order) do %>
-            <p>Récupération du linge : <strong><%= order.pickup_start_date %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
-            <p>Retour du linge : <strong><%= order.delivery_start_date %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
-            <p>Température : <%= order.temperature %></p>
-            <p>Prix : <%= order.formula.price if order.formula %>€</p>
-            <p><small>Référence de la commande : <%= order.id %></small></p>
-            <% end %>
-          </div>
-        </div>
+
+
+<h3 class="text-center"><%= "Commandes à washer" if @orders_received.count != 0 %></h3>
+<% @orders_received.each do |order| %>
+  <div class="row ">
+    <div class="orders">
+    <%= link_to(order) do %>
+      <p>Récupération du linge : <strong><%= order.pickup_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
+      <p>Retour du linge : <strong><%= order.delivery_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
+      <p>Température : <%= order.temperature %></p>
+      <p>Prix : <%= order.formula.price if order.formula %>€</p>
+      <p><small>Référence de la commande : <%= order.id %></small></p>
       <% end %>
+    </div>
+  </div>
+<% end %>
 
-   <%= render 'layouts/form_wrapper_end' %>
+<%= render 'layouts/form_wrapper_end' %>
