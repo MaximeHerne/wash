@@ -11,7 +11,7 @@
       <p id="question1" class="pointer">Comment s’inscrire sur Washed ?</p>
       <p class="hidden" id="answer1">Pour <%= link_to 's’inscrire sur Washed', new_user_registration_path %>, rien de plus simple, il vous suffit d’entrer votre adresse mail et votre mot de passe. </p>
       <p id="question2" class="pointer">Comment faire sa première commande ?</p>
-      <p class="hidden" id="answer2">Afin de réaliser votre première machine vous devez avoir <%= link_to 'créé un profil', new_profile_path %> : prénom, nom, téléphone, adresse, code postal, ville. Ensuiten rien de plus facile, vous choisissez une date et un créneau horaire pour la collecte ainsi que la restitution de vos vêtements. Notre washer s’occupe du reste !</p>
+      <p class="hidden" id="answer2">Afin de réaliser votre première machine vous devez avoir <%= link_to 'créé un profil', new_profile_path %> : prénom, nom, téléphone, adresse, code postal et ville. Ensuite rien de plus facile, vous choisissez une date et un créneau horaire pour la collecte ainsi que la restitution de vos vêtements. Notre washer s’occupe du reste !</p>
       <br>
       <h4>L'assurance Washed</h4>
       <p id="question3" class="pointer">Que se passe-t-il si mes vêtements sont abimés ?</p>
@@ -25,17 +25,23 @@
       <h4>L'offre Washed</h4>
       <p id="question6" class="pointer">Quel est le prix d’une machine ? </p>
       <p class="hidden" id="answer6">Le service Wash est à seulement 6,90 € ! Il inclue la lessive et la lingette anti-décoloration. Vous ne vous occupez de rien, nous sommes là pour cela. </p>
-      <p id="question6" class="pointer">Quand passez-vous prendre mon linge ?</p>
-      <p class="hidden" id="answer6">Nos livreurs passent de 18h à minuit chez vous 7 jours / 7.Vous pouvez commander pour le jour même. Vous choisissez l'heure de passage et l'adresse lors du processus de commande.</p>
-      <p id="question7" class="pointer">Comment récupère-t-on son sac de linge ?</p>
-      <p class="hidden" id="answer7">Au moment de finaliser votre commande, vous nous indiquez l'heure à laquelle vous souhaitez que notre livreur passe. Il faut au minimum 18 heures entre l’heure à laquelle nous récupérons votre linge et l’heure à laquelle nous vous le livrons. </p>
-      <p id="question8" class="pointer">Quelles contenances ont vos machines ?</p>
-      <p class="hidden" id="answer8">Nos machines font toutes 6 kg pour vous permettre de faire des machines plus souvent et d’avoir vos vêtements préférés quand vous voulez ! </p>
-      <p id="question9" class="pointer">Comment séchez-vous les vêtements ?</p>
-      <p class="hidden" id="answer9">Afin de ne pas abîmer vos vêtements, nous séchons vos vêtements dans une salle ventilée d'air chaud.</p>
-      <p id="question10" class="pointer">Quelle est votre lessive ?</p>
-      <p class="hidden" id="answer10">Nous utilisons une lessive fabriquée à base d'ingrédients d'origine naturelle végétale et de véritables copeaux de savon de Marseille, un savon aux propriétés détachantes.
+      <p id="question7" class="pointer">Quand passez-vous prendre mon linge ?</p>
+      <p class="hidden" id="answer7">Nos livreurs passent de 18h à minuit chez vous 7 jours / 7.Vous pouvez commander pour le jour même. Vous choisissez l'heure de passage et l'adresse lors du processus de commande.</p>
+      <p id="question8" class="pointer">Comment récupère-t-on son sac de linge ?</p>
+      <p class="hidden" id="answer8">Au moment de finaliser votre commande, vous nous indiquez l'heure à laquelle vous souhaitez que notre livreur passe. Il faut au minimum 18 heures entre l’heure à laquelle nous récupérons votre linge et l’heure à laquelle nous vous le livrons. </p>
+      <p id="question9" class="pointer">Quelles contenances ont vos machines ?</p>
+      <p class="hidden" id="answer9">Nos machines font toutes 6 kg pour vous permettre de faire des machines plus souvent et d’avoir vos vêtements préférés quand vous voulez ! </p>
+      <p id="question10" class="pointer">Comment séchez-vous les vêtements ?</p>
+      <p class="hidden" id="answer10">Afin de ne pas abîmer vos vêtements, nous séchons vos vêtements dans une salle ventilée d'air chaud.</p>
+      <p id="question11" class="pointer">Quelle est votre lessive ?</p>
+      <p class="hidden" id="answer11">Nous utilisons une lessive fabriquée à base d'ingrédients d'origine naturelle végétale et de véritables copeaux de savon de Marseille, un savon aux propriétés détachantes.
       Notre lessive est certifiée par Ecocert qui sont des indépendants et des pros de l'environnement. Elle ne contient ni colorant, ni OGM, ni EDTA, ni azurant optique.</p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12  col-sm-4 col-sm-offset-4 text-center">
+      <p class="bold">On ne répond pas à une de vos questions ? Posez-nous là à <%= mail_to "contact@washed.fr" %></p>
     </div>
   </div>
 </div>
