@@ -3,6 +3,8 @@ footer {
   color: #fff;
   margin-top: 40px;
   a {
+    color: white;
+    font-weight: 100;
     i {
       color: #fff;
       font-weight: 100;
@@ -10,21 +12,15 @@ footer {
       margin: 15px;
     }
     i:hover {
-      color: #2980b9;
+      color: #23527c;
       text-decoration: none;
     }
     h3 {
       font-weight: 700;
     }
   }
-}
-
-footer a {
-  color: white;
-  font-weight: 100;
-}
-footer a:hover {
-  // color: #2980b9;
-  font-weight: bold;
-  text-decoration: none;
+  a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
