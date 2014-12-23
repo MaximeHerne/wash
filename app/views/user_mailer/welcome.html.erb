@@ -1,7 +1,29 @@
-<h1>Si toi aussi t'en as marre de faire tes machines ! Bienvenue !</h1>
+<html>
+  <body>
 
-<p>
-  <%= @user.email %>, vous venez de vous simplifier la vie, comme jamais !</p>
-  <p> Rejoignez la communauté wash et commandez votre machine sur le site
-      <%= link_to "wash", root_url %>    </p>
+    <h1>Bienvenue chez Washed !</h1>
 
+    <p>
+      Merci d'avoir rejoint la communauté, nous sommes heureux de te compter parmis nous.
+    </p>
+
+    <p>
+      Pour te remercier, nous t'offrons 2 cycles de lavage que tu peux utiliser dès aujourd'hui.
+    </p>
+
+    <p>
+      Profite dès maintenant de ton premier cycle de lavage gratuit !
+    </p>
+
+    <p>
+      Pour pouvoir récupérer ton sac de linge sale sans problème, nous avons besoin de toutes les informations sur ton profil donc remplis-le bien. ;)
+    </p>
+
+    <p>
+      Dans tous les cas, c'est par ici :
+    </p>
+
+    <%= link_to "Je fais ma première commande gratuite", new_order_url %>
+
+  </body>
+</html>
