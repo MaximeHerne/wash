@@ -141,3 +141,11 @@
     <div class="spacer"></div>
   </div>
 </div>
+
+
+<% content_for(:js) do %>
+  <script>
+   $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "home page"});
+    });
+  </script>
+<% end %>

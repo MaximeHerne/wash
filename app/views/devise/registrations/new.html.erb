@@ -20,3 +20,14 @@
 <%= render "devise/shared/links" %>
 
 <%= render 'layouts/form_wrapper_end' %>
+
+<% content_for(:js) do %>
+  <script>
+   $(document).ready(function() { mixpanel.identify("@user.id");
+  mixpanel.people.set({
+      "$created": @user.created_at,
+      "$email": @user.email
+    });
+   });
+  </script>
+<% end %>
