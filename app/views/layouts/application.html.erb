@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Wash</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <head>
+    <title><%= yield(:title) || "Washed" %></title>
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <meta name="description" content="<%= (yield(:description) || "Découvrez Washed et ne faites plus jamais votre lessive ! Nous lavons vos vêtements, vous les récupérez le lendemain.").squish %>">
 
-  <!-- <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <%= render 'layouts/navbar' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= favicon_link_tag %>
 
-  <%= yield %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <%= render 'layouts/footer' %>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
+    <%= render 'layouts/navbar' %>
+
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
 
 
-  <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
-  <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
-  <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
+    <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+    <%= javascript_include_tag 'application' %>
 
-  <%= yield(:js) %>
+    <%= yield(:js) %>
 
-  <%= render 'layouts/olark' %>
-</body>
+    <%= render 'layouts/olark' %>
+  </body>
 </html>
