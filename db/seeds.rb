@@ -1,6 +1,6 @@
 Formula.destroy_all
-Formula.create(name: 'Sans lessive', price: 5)
-Formula.create(name: 'Avec lessive', price: 9)
+Formula.create(name: 'Sans lessive', price: 6,90)
+Formula.create(name: 'Avec lessive', price: 6,90)
 
 
 10.times do
