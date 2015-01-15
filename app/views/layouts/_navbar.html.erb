@@ -18,8 +18,8 @@
       <ul class="nav navbar-nav navbar-right">
 
         <li><%= link_to 'Accueil', root_path %></li>
-        <li><a href="#how-it-works">Comment ça marche</a></li>
-        <li><a href="#pricing">Prix</a></li>
+        <li><%= link_to "Comment ça marche", "#{root_path}#how-it-works" %></li>
+        <li><%= link_to "Prix", "#{root_path}#pricing" %></li>
         <li><%= link_to 'Faq', faq_page_path, target: "_blank" %></li>
 
         <% if user_signed_in? %>
