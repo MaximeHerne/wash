@@ -1,0 +1,88 @@
+<%= content_for(:title) do %>
+  CGU - Washed
+<% end %>
+
+<div class="banner banner-contact">
+  <div class="container text-center">
+    <h1>CGU</h1>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+      <p id="question1" class="pointer">Définitions</p>
+      <p class="hidden" id="answer1">« CGU » désigne les présentes Conditions Générales d’Utilisation du Site applicables aux clients, consultables sur le site Internet, et auxquelles les utilisateurs du site doivent adhérer pour s’inscrire.
+« Utilisateur » désigne toute personne physique ou morale qui utilise et navigue sur le site Internet « Washed.fr ». Les utilisateurs du site peuvent être divisés en deux catégories, à la suite de leur inscription.
+« client » : personne physique ou morale souhaitant formuler et manifester un projet d’achat immobilier à plusieurs.
+« washer » : personne physique ou morale souhaitant effectuer des machines pour le compte de Washed.fr</p>
+      <p id="question2" class="pointer">Règles pour les utilisateurs du site</p>
+      <p class="hidden" id="answer2">Washed a élaboré et mis en place son site qui assure l’interface entre les washers et clients afin de permettre la réalisation de machine à laver.
+      Tous les droits de propriété intellectuelle portant sur tout document mis à disposition des utilisateurs du site sont et resteront la propriété de Washed.
+      Toute personne souhaitant faire appel aux services de Washed doit :
+      Être majeur
+      Respecter les règles et usages d’Internet
+      Mettre à jour les informations le concernant
+      Respecter la stricte confidentialité de son mot de passe, et ne pas le communiquer, ou le partager avec des tiers
+      Accepter la politique de confidentialité du site
+      Respecter les présentes conditions générales d’utilisation, sous peine de voir son compte supprimé par Washed
+      Garantir que les renseignements fournis sont exactes et ne sont entachés d’aucune erreur ou omission de caractère trompeur ou malhonnête. La responsabilité de Washed ne pourra être engagée, à quel que titre que ce soit, si les renseignements portés ou si la qualité de l’annonce se révèlent inexacts.
+      Toute personne faisant appel au service de Washed ne doit pas :
+      Usurper l’identité d’un autre utilisateur
+      Partager des contenus diffamatoires, injurieux, illégaux, ou nuisibles à Wehome et au site Internet (virus, publicité, spam), ou nuisibles à un tiers (informations personnelles)
+      Tenter d’extraire des informations personnelles par moyen électronique ou tout autre moyen à des fins commerciales ou illégales.
+      Politique de confidentialité
+      Pour tous les utilisateurs du site, Washed protège les données personnelles et la vie privée des utilisateurs du site. Le site a été déclaré auprès de la Commission Nationale de l’Informatique et des Libertés.
+      Les informations communiquées par l’utilisateur seront utilisées par les services de Wehome et ses prestataires. Conscient de ce que la collecte et le traitement des Données Personnelles sur Internet, doivent respecter les droits fondamentaux des personnes, Wehome s’engage à ce que tout traitement de données nominatives sur le site soit conforme à la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés. L’utilisateur dispose d’un droit d’accès (article 34 à 38 de la loi de 1978) et d’un droit de rectification (article 36 de la loi de 1978) aux données personnelles le concernant. L’utilisateur peut exercer ce droit à tout moment par la modification de son profil accessible depuis son espace personnel une fois qu’il est connecté. Il peut alors rectifier, compléter, clarifier, mettre à jour ou effacer les informations les concernant qui seraient inexactes, incomplètes ou obsolètes. Pour la suppression de son compte, l’emprunteur ou l’épargnant pourra envoyer un e-mail comportant son nom d’utilisateur à l’adresse contact@Washed.fr.</p>
+      <p id="question3" class="pointer">Evolution du présent contrat</p>
+      <p class="hidden" id="answer3">Washed se réserve le droit de modifier les termes, conditions et mentions du présent contrat à tout moment. Il est ainsi conseillé à l’utilisateur, washer et client de consulter régulièrement la dernière version des Conditions d’Utilisation disponible sur le site Washed.fr.</p>
+      <p id="question4" class="pointer">Droit applicable et juridiction compétente</p>
+      <p class="hidden" id="answer4">Les règles en matière de droit, applicables aux contenus et aux transmissions de données sur et autour du site, sont déterminées par la loi française. En cas de litige, n’ayant pu faire l’objet d’un accord à l’amiable, seuls les tribunaux français du ressort de la cour d’appel de Paris sont compétents.</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-xs-12  col-sm-4 col-sm-offset-4 text-center">
+      <p>On ne répond pas à une de vos questions ? Posez-nous là à <%= mail_to "contact@washed.fr" %></p>
+    </div>
+  </div>
+</div>
+
+
+<% content_for(:js) do %>
+  <script>
+    $(document).ready(function() {
+    $('#question1').on('click', function(event) {
+       $('#answer1').removeClass('hidden');
+      });
+    });
+
+    $(document).ready(function() {
+    $('#question2').on('click', function(event) {
+       $('#answer2').removeClass('hidden');
+      });
+    });
+
+    $(document).ready(function() {
+    $('#question3').on('click', function(event) {
+       $('#answer3').removeClass('hidden');
+      });
+    });
+
+    $(document).ready(function() {
+    $('#question4').on('click', function(event) {
+       $('#answer4').removeClass('hidden');
+      });
+    });
+
+    $(document).ready(function() {
+    $('#question5').on('click', function(event) {
+       $('#answer5').removeClass('hidden');
+      });
+    });
+
+  </script>
+<% end %>
