@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get "pages/faq", :as => 'faq_page'
   get "pages/contact", :as => 'contact_page'
+  get "pages/cgu", :as => 'cgu_page'
 end
