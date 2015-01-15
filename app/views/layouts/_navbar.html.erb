@@ -17,10 +17,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
 
-        <li><%= link_to 'ACCUEIL', root_path %></li>
-        <li><%= link_to 'FAQ', faq_page_path %></li>
-        <li><%= link_to 'BLOG', "http://blog.washed.fr" %></li>
-        <li><%= link_to 'CONTACT', contact_page_path %></li>
+        <li><%= link_to 'Accueil', root_path %></li>
+        <li><a href="#how-it-works">Comment ça marche</a></li>
+        <li><a href="#pricing">Prix</a></li>
+        <li><%= link_to 'Faq', faq_page_path, target: "_blank" %></li>
 
         <% if user_signed_in? %>
           <li class="dropdown">
