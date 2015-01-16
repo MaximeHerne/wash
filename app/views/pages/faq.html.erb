@@ -16,6 +16,9 @@
       <p class="hidden" id="answer1">Pour <%= link_to 's’inscrire sur Washed', new_user_registration_path %>, rien de plus simple, il vous suffit d’entrer votre adresse mail et votre mot de passe. </p>
       <p id="question2" class="pointer">Comment faire sa première commande ?</p>
       <p class="hidden" id="answer2">Afin de réaliser votre première machine vous devez avoir <%= link_to 'créé un profil', new_profile_path %> : prénom, nom, téléphone, adresse, code postal et ville. Ensuite rien de plus facile, vous choisissez une date et un créneau horaire pour la collecte ainsi que la restitution de vos vêtements. Notre washer s’occupe du reste !</p>
+      <p id="question12" class="pointer">De bons conseils pour débuter !</p>
+      <p class="hidden" id="answer12"><strong>1er conseil</strong> : Nos machines ont une capacité de 6kg, n'en mettez pas plus car votre linge ne sera pas bien lavé : il a besoin de pouvoir respirer dans la machine pour être bien lavé. <br>
+      <strong>2ème conseil</strong> : nous essorons vos vêtements à 900 tours/minute, nous vous déconseillons de mettre des vêtements fragiles comme de la laine.</p>
       <br>
       <h4>L'assurance Washed</h4>
       <p id="question3" class="pointer">Que se passe-t-il si mes vêtements sont abimés ?</p>
@@ -117,6 +120,12 @@
     $(document).ready(function() {
     $('#question11').on('click', function(event) {
        $('#answer11').removeClass('hidden');
+      });
+    });
+
+    $(document).ready(function() {
+    $('#question12').on('click', function(event) {
+       $('#answer12').removeClass('hidden');
       });
     });
   </script>
