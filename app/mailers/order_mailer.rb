@@ -4,7 +4,7 @@ class OrderMailer < ActionMailer::Base
   def new_order(order)
     @order = order
     mail( to: @order.user.email,
-          bcc: "contact@washed.fr" ,
+          bcc: "contact@washed.fr, florianboret@gmail.com",
           subject: 'Nouvelle commande confirmée')
   end
 end
