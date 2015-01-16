@@ -57,6 +57,10 @@
 
 <% content_for(:js) do %>
   <script>
+
+    $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "faq page"});
+    });
+
     $(document).ready(function() {
     $('#question1').on('click', function(event) {
        $('#answer1').removeClass('hidden');
@@ -129,7 +133,5 @@
       });
     });
 
-    $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "faq page"});
-    });
   </script>
 <% end %>
