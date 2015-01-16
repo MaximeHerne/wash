@@ -1,9 +1,8 @@
 Formula.destroy_all
-Formula.create(name: 'Economique - 7€', price: 7)
-Formula.create(name: 'All-inclusive - 9€', price: 9)
+Formula.create(name: 'Economique - 6,90€', price: 6.90)
+Formula.create(name: 'All-inclusive - 9,90€', price: 9.90)
 
-
-3.times do
+2.times do
   user = User.new({
     email: Faker::Internet.email,
     password: Faker::Internet.password,

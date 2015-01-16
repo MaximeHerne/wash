@@ -42,7 +42,11 @@
               <p>Température : <strong><%= @order.temperature %></strong></p>
             </div>
             <div class="col-xs-4">
-              <p>PRIX : <strong><%= @order.formula.price %>€</strong></p>
+              <% if @order.formula.id == 19 %>
+              <p>PRIX : <strong>6,90€</strong></p>
+              <% else %>
+              <p>PRIX : <strong>9,90€</strong></p>
+              <% end %>
             </div>
           </div>
         </div>
