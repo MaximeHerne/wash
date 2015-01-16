@@ -38,5 +38,13 @@
 
     <%= render 'layouts/olark' %>
 
+   <% content_for(:js) do %>
+      <script>
+      $(document).ready(function() { mixpanel.track('page viewed', {
+          'page name' : document.title,'url' : window.location.pathname});
+      });
+      </script>
+    <% end %>
+
   </body>
 </html>
