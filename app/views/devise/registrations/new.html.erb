@@ -29,5 +29,8 @@
       "$email": @user.email
     });
    });
+
+   $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "New registration"});
+    });
   </script>
 <% end %>

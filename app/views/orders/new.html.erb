@@ -5,3 +5,10 @@
 <%= render 'form' %>
 
 <%= render 'layouts/form_wrapper_end' %>
+
+<% content_for(:js) do %>
+  <script>
+   $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "New Order"});
+    });
+  </script>
+<% end %>

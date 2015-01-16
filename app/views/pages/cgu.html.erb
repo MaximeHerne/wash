@@ -31,11 +31,11 @@
       Garantir que les renseignements fournis sont exactes et ne sont entachés d’aucune erreur ou omission de caractère trompeur ou malhonnête. La responsabilité de Washed ne pourra être engagée, à quel que titre que ce soit, si les renseignements portés ou si la qualité de l’annonce se révèlent inexacts.
       Toute personne faisant appel au service de Washed ne doit pas :
       Usurper l’identité d’un autre utilisateur
-      Partager des contenus diffamatoires, injurieux, illégaux, ou nuisibles à Wehome et au site Internet (virus, publicité, spam), ou nuisibles à un tiers (informations personnelles)
+      Partager des contenus diffamatoires, injurieux, illégaux, ou nuisibles à Washed et au site Internet (virus, publicité, spam), ou nuisibles à un tiers (informations personnelles)
       Tenter d’extraire des informations personnelles par moyen électronique ou tout autre moyen à des fins commerciales ou illégales.
       Politique de confidentialité
       Pour tous les utilisateurs du site, Washed protège les données personnelles et la vie privée des utilisateurs du site. Le site a été déclaré auprès de la Commission Nationale de l’Informatique et des Libertés.
-      Les informations communiquées par l’utilisateur seront utilisées par les services de Wehome et ses prestataires. Conscient de ce que la collecte et le traitement des Données Personnelles sur Internet, doivent respecter les droits fondamentaux des personnes, Wehome s’engage à ce que tout traitement de données nominatives sur le site soit conforme à la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés. L’utilisateur dispose d’un droit d’accès (article 34 à 38 de la loi de 1978) et d’un droit de rectification (article 36 de la loi de 1978) aux données personnelles le concernant. L’utilisateur peut exercer ce droit à tout moment par la modification de son profil accessible depuis son espace personnel une fois qu’il est connecté. Il peut alors rectifier, compléter, clarifier, mettre à jour ou effacer les informations les concernant qui seraient inexactes, incomplètes ou obsolètes. Pour la suppression de son compte, l’emprunteur ou l’épargnant pourra envoyer un e-mail comportant son nom d’utilisateur à l’adresse contact@Washed.fr.</p>
+      Les informations communiquées par l’utilisateur seront utilisées par les services de Washed et ses prestataires. Conscient de ce que la collecte et le traitement des Données Personnelles sur Internet, doivent respecter les droits fondamentaux des personnes, Washed s’engage à ce que tout traitement de données nominatives sur le site soit conforme à la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés. L’utilisateur dispose d’un droit d’accès (article 34 à 38 de la loi de 1978) et d’un droit de rectification (article 36 de la loi de 1978) aux données personnelles le concernant. L’utilisateur peut exercer ce droit à tout moment par la modification de son profil accessible depuis son espace personnel une fois qu’il est connecté. Il peut alors rectifier, compléter, clarifier, mettre à jour ou effacer les informations les concernant qui seraient inexactes, incomplètes ou obsolètes. Pour la suppression de son compte, l’emprunteur ou l’épargnant pourra envoyer un e-mail comportant son nom d’utilisateur à l’adresse contact@Washed.fr.</p>
       <p id="question3" class="pointer">Evolution du présent contrat</p>
       <p class="hidden" id="answer3">Washed se réserve le droit de modifier les termes, conditions et mentions du présent contrat à tout moment. Il est ainsi conseillé à l’utilisateur, washer et client de consulter régulièrement la dernière version des Conditions d’Utilisation disponible sur le site Washed.fr.</p>
       <p id="question4" class="pointer">Droit applicable et juridiction compétente</p>
@@ -54,6 +54,9 @@
 
 <% content_for(:js) do %>
   <script>
+  $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "HomePage"});
+   });
+
     $(document).ready(function() {
     $('#question1').on('click', function(event) {
        $('#answer1').removeClass('hidden');

@@ -20,3 +20,10 @@
   </ul>
   <p>Pour toute autre question, ou juste nous dire bonjour, utilisez l’adresse <a href="mailto:contact@washed.fr">contact@washed.fr</a></p>
 </div>
+
+<% content_for(:js) do %>
+  <script>
+   $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "Contact page"});
+    });
+  </script>
+<% end %>
