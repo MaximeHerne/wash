@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
 
-        <li><%= link_to 'Accueil', root_path %></li>
+        <li><%= link_to 'Accueil', "#{root_path}#welcome-helper" %></li>
         <li><%= link_to "Comment ça marche", "#{root_path}#how-it-works-scroll-helper" %></li>
         <li><%= link_to "Prix", "#{root_path}#pricing-scroll-helper" %></li>
         <li><%= link_to 'Faq', faq_page_path, target: "_blank" %></li>
