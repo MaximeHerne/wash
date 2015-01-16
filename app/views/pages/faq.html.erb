@@ -128,5 +128,8 @@
        $('#answer12').removeClass('hidden');
       });
     });
+
+    $(document).ready(function() { mixpanel.track("Page loaded", {"Page Name": "faq page"});
+    });
   </script>
 <% end %>
