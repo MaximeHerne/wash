@@ -8,7 +8,11 @@
           <p>Récupération du linge : <strong><%= order.pickup_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.pickup_bracket %></strong></p>
           <p>Retour du linge : <strong><%= order.delivery_start_date.strftime("%d/%m/%Y") %></strong> entre <strong><%= order.delivery_bracket %></strong></p>
           <p>Température : <%= order.temperature %></p>
-          <p>Prix : <%= order.formula.price if order.formula %>€</p>
+          <% if order.formula.id == 19 %>
+          <p>PRIX : <strong>6,90€</strong></p>
+          <% else %>
+          <p>PRIX : <strong>9,90€</strong></p>
+          <% end %>
           <p><small>Référence de la commande : <%= order.id %></small></p>
           <% end %>
       </div>
