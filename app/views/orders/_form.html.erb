@@ -1,7 +1,7 @@
 <%= simple_form_for @order do |f| %>
   <div class="text-center">
     <%= f.simple_fields_for :formula do |formula| %>
-      <%= formula.input :id, label: 'Formule', collection: @formulas, as: :radio_buttons, checked: 2 %>
+      <%= formula.input :id, label: 'Formule', collection: @formulas, as: :radio_buttons, checked: 3 %>
     <% end %>
     <%= f.input :temperature, collection: temperatures, as: :radio_buttons, checked: temperatures[1] %>
   </div>
