@@ -9,12 +9,17 @@
 
 #pricing-scroll-helper {
   position: relative;
-  bottom: 60px;
+  bottom: 100px;
 }
 
 #how-it-works-scroll-helper{
   position: relative;
-  bottom: 85px;
+  bottom: 100px;
+}
+
+.padding-top-down{
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .features {
@@ -26,7 +31,7 @@
 }
 
 .comments {
-  padding-top: 5px;
+  padding-top: 50px;
   padding-bottom: 20px;
 }
 
