@@ -11,6 +11,8 @@ class PagesController < ApplicationController
   end
 
   def cgu
+  end
 
+  def sitemap
   end
 end
